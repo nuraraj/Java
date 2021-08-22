@@ -61,7 +61,95 @@ public void parrot(String sound){
 
 B. Model fish as well as other swimming animals 
 -B1. In addition to the birds, can you model a fish? 
- --B1.1. Fish es don’t sing 
- --B1.2. Fish es don’t walk 
- --B1.3. Fish es can swim 
+ --B1.1. Fishes don’t sing 
+ --B1.2. Fishes don’t walk 
+ --B1.3. Fishes can swim 
+ - class Fishes extends Animal { 
+    void swim(){ 
+     System.out.println("I swim"); 
+     System.out.println("I don't sing"); 
+     System.out.println("I don't walk"); 
+    }   
+}
+
+-B2. Can you specialize the fish as a Shark and as a Clownfish? 
+--B2.1. Sharks are large and grey 
+--B2.2. Clownfish are small and colourful (orange) 
+--B2.3. Clownfish make jokes 
+--B2.4. Sharks eat other fish 
+-  void Sharks (){
+    Fishes fish = new Fishes();
+    System.out.println("I'm a shark");
+    System.out.println("I'm large and grey");
+    System.out.println("I eat other fish");
+    fish.swim();
+     
+ }
+ - void Clownfish (){
+    Fishes fish = new Fishes();
+    System.out.println("I'm a Clownfish");
+    System.out.println("I'm small and colourful");
+    System.out.println("I make jokes");
+    fish.swim();
+ }
+ 
+-B3. Dolphin s are not exactly fish, yet, they are good swimmers 
+--B3.1. Can you model a dolphin that swims without inheriting from a fish class? 
+- class Dolphins extends SwimmingAnimal { 
+    SwimmingAnimal swim = new SwimmingAnimal();
+    swim.canSwim();
+}
+Dolphins dolphin = new Dolphins();
+dolphin.dolp();
+
+--B3.2. How do you avoid duplicating code or introducing unneeded overhead?
+- by creating a class for Swimming Animal
+class SwimmingAnimal {
+    public void canSwim() {
+         System.out.println("I swim"); 
+      }
+}
+
+
+C. Model animals that change their behaviour over time 
+-C1. Can you model a butterfly? 
+--C1.1. A butterfly can fly 
+--C1.2. A butterfly does not make a sound  
+-  class ButterflyMorph extends Insect{
+        boolean fly(){ 
+            System.out.println("I can fly");
+            return true; 
+        }
+        boolean crawl(){ 
+            System.out.println("I crawl");
+            return true; 
+        }
+        boolean sound(){ 
+            System.out.println("I dont make sound");
+            return false; 
+        } 
+    }
+-C2. Can you optimize your model to account for the metamorphosis from caterpillar to  butterfly?  
+--C2.1. A caterpillar cannot fly 
+--C2.2. A caterpillar can walk (crawl)  
+
+ Insect morph = new CaterpillarMorph();
+
+  void metamorphosis(){
+      morph =  new ButterflyMorph();
+  }
+     class CaterpillarMorph extends Insect {
+        boolean fly(){ 
+            System.out.println("I cannot fly");
+            return false; 
+        }
+        boolean crawl(){ 
+            System.out.println("I crawl");
+            return true; 
+        }
+        boolean sound(){ 
+            System.out.println("I make sound");
+            return true; 
+        }             
+    }
 
