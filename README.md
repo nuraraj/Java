@@ -153,3 +153,12 @@ C. Model animals that change their behaviour over time
         }             
     }
 
+
+D. Counting animals 
+Suppose you have an array of animals
+-D1. Can you share the code to count: 
+--D1.1. How many of these animals can fly?  4
+--D1.2. How many of these animals can walk? 2
+--D1.3. How many of these animals can sing? 2
+--D1.4. How many of these animals can swim? 5
+
